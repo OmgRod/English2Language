@@ -5,7 +5,7 @@ This Python program is a web server that converts English into a variety of lang
 
 ## Warning:
 
-**Before running the download script, edit it to include just the language models you want downloaded. Each one is around 200MB so choose wisely.**
+**Before running the download script, edit it to include just the language models you want downloaded. Each one is around 200-300MB so choose wisely.**
 
 ## Installation:
 

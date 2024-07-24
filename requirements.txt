@@ -1,3 +1,6 @@
 transformers
+huggingface
+sentencepiece
+sacremoses
 django
 torch

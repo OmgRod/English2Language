@@ -113,49 +113,24 @@ models = {
     'pis': 'Helsinki-NLP/opus-mt-en-pis',
     'pon': 'Helsinki-NLP/opus-mt-en-pon',
     'poz': 'Helsinki-NLP/opus-mt-en-poz',
-    'prk': 'Helsinki-NLP/opus-mt-en-prk',
-    'ps': 'Helsinki-NLP/opus-mt-en-ps',
-    'qu': 'Helsinki-NLP/opus-mt-en-qu',
     'ro': 'Helsinki-NLP/opus-mt-en-ro',
     'ru': 'Helsinki-NLP/opus-mt-en-ru',
     'rw': 'Helsinki-NLP/opus-mt-en-rw',
-    'sa': 'Helsinki-NLP/opus-mt-en-sa',
-    'sc': 'Helsinki-NLP/opus-mt-en-sc',
-    'sd': 'Helsinki-NLP/opus-mt-en-sd',
-    'se': 'Helsinki-NLP/opus-mt-en-se',
     'sg': 'Helsinki-NLP/opus-mt-en-sg',
-    'sh': 'Helsinki-NLP/opus-mt-en-sh',
-    'si': 'Helsinki-NLP/opus-mt-en-si',
     'sk': 'Helsinki-NLP/opus-mt-en-sk',
-    'sl': 'Helsinki-NLP/opus-mt-en-sl',
     'sm': 'Helsinki-NLP/opus-mt-en-sm',
     'sn': 'Helsinki-NLP/opus-mt-en-sn',
-    'so': 'Helsinki-NLP/opus-mt-en-so',
     'sq': 'Helsinki-NLP/opus-mt-en-sq',
-    'sr': 'Helsinki-NLP/opus-mt-en-sr',
     'st': 'Helsinki-NLP/opus-mt-en-st',
-    'su': 'Helsinki-NLP/opus-mt-en-su',
     'sw': 'Helsinki-NLP/opus-mt-en-sw',
-    'ta': 'Helsinki-NLP/opus-mt-en-ta',
-    'te': 'Helsinki-NLP/opus-mt-en-te',
-    'tg': 'Helsinki-NLP/opus-mt-en-tg',
-    'th': 'Helsinki-NLP/opus-mt-en-th',
-    'tk': 'Helsinki-NLP/opus-mt-en-tk',
     'tl': 'Helsinki-NLP/opus-mt-en-tl',
     'tn': 'Helsinki-NLP/opus-mt-en-tn',
     'to': 'Helsinki-NLP/opus-mt-en-to',
-    'tr': 'Helsinki-NLP/opus-mt-en-tr',
-    'ts': 'Helsinki-NLP/opus-mt-en-ts',
-    'tt': 'Helsinki-NLP/opus-mt-en-tt',
     'tw': 'Helsinki-NLP/opus-mt-en-tw',
     'uk': 'Helsinki-NLP/opus-mt-en-uk',
     'ur': 'Helsinki-NLP/opus-mt-en-ur',
-    'uz': 'Helsinki-NLP/opus-mt-en-uz',
     'vi': 'Helsinki-NLP/opus-mt-en-vi',
-    'wo': 'Helsinki-NLP/opus-mt-en-wo',
-    'xh': 'Helsinki-NLP/opus-mt-en-xh',
-    'yi': 'Helsinki-NLP/opus-mt-en-yi',
-    'zu': 'Helsinki-NLP/opus-mt-en-zu'
+    'xh': 'Helsinki-NLP/opus-mt-en-xh'
 }
 
 # Directory to save the downloaded models
@@ -179,4 +154,7 @@ def download_model_and_tokenizer(model_name, save_path):
 # Download each model and tokenizer
 for lang, model_name in models.items():
     model_save_path = os.path.join(save_directory, f"opus-mt-en-{lang}")
+    if os.path.exists(model_save_path):
+        print(f"Skipping {model_name}, already downloaded.")
+        continue
     download_model_and_tokenizer(model_name, model_save_path)
