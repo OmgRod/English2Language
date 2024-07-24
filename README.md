@@ -3,6 +3,10 @@
 This Python program is a web server that converts English into a variety of languages, including Spanish, French, Russian, German, and Italian!
 -# Fun fact: This project was originally created for a Geometry Dash mod that translates everything into the user's chosen language. Stay tuned for its release!
 
+## Warning:
+
+**Before running the download script, edit it to include just the language models you want downloaded. Each one is around 200MB so choose wisely.**
+
 ## Installation:
 
 ### Option 1: Releases (Windows Only)
